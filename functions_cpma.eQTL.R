@@ -160,5 +160,12 @@ dBG <- density(meanExp)
 Prob <- apply(as.matrix(cbind(meanExp,Prob),ncol=2),1,function(x){ x[2] / approx(dBG$x,dBG$y,x[1])$y } )
 return(Prob) }
 
+getTFoverlapRD <- function(x) {
+file=paste('TF.rOverlap.',as.character(x),'.RData',sep='')
+load(file) 
+return(get(paste('TF.rOverlap.',as.character(x),sep='')))
+}
+
+
 
 
