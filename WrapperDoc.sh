@@ -402,7 +402,6 @@ Rscript tOL.p.R LWK YRI targetsYvL.RData tOL_YvL
 Rscript tOL.p.R MKK YRI targetsYvM.RData tOL_YvM
 
 # creates the objects tOL_YvM.p.RData, tOL_YvL.p.RData and tOL_LvM.p.RData
-# Not tested yet. <------- OBS!!!
 
 ##########################################################################################
 # Pairwise assessment of direction overlap
