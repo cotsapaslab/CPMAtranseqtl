@@ -93,9 +93,6 @@ Rscript ./scripts/filtExp3.R
 # Detection of optimal lambda - number of 'genetic principal components'
 # This is done for 100 genes, 50 random and 50 randomly selected among genes high lambda (top 5%).
 # Requires flashpca (https://github.com/gabraham/flashpca)
-
-# I did not use seed.. So can not replicate the exact same gene selection as before.
-
 # Linear regression without covariates (needed to calculate lambda)
 
 plink --bfile mkk15_common --linear --pheno MKKphenoQ --all-pheno --out ./MKKassoc/MKK
