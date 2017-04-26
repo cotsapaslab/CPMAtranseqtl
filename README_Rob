@@ -1,0 +1,36 @@
+
+This package contains tools to make use of very large matrices of floating point numbers in an efficient manner.
+
+Before using the package, run make to compile the C utilities.
+
+This package contains 5 tools:
+
+API.R, API.py:  These are api's that are used to extract elements or rows of the matrices efficiently.  
+
+transpose2:  This utility transposes a matrix.  The arguments are:
+
+transpose2 <infile> <outfile> <chunk> <start>
+
+where:
+  infile: the file to transpose
+  outfile: the new, transposed file
+  chunk: the number of columns to transpose in one pass.  This is a tuning parameter.  You can try various small integers, or
+          just use 1.
+  start: This is the char position in the output file to begin at.  When starting, use 0, but if the job is interrupted, you can
+         restart at the current size of the output file to pick up where you stopped.
+
+The last two utilities pertain to the row and column counts, which should be the last 8 bytes of the binary matrix file, and 
+which are used for sanity checking.  GetCounts can be used to query the current counts.  FixCounts sets the counts.  In both
+cases you need to specify the byte location where the counts should begin.
+
+getCounts:
+  getCounts <file> <pos>
+
+  This prints the counts found beginning at <pos>.  Normally you would run this giving pos as the size of the file-8.
+
+fixCounts:
+  fixCounts <file> <pos> <rows> <cols>
+  This overwrites the 8 bytes beginning at <pos> with the provided row and col counts.  
+
+Note that transpose2 expects to find counts at the end of the file, and will swap the counts appropriately in the new file,
+so you don't need to worry about them.
