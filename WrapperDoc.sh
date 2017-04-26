@@ -91,9 +91,6 @@ Rscript ./scripts/filtExp3.R
 
 ##########################################################################################
 # Detection of optimal lambda - number of 'genetic principal components'
-# How long did this take? Took me about a week (excluding linear regression, another week) to get to the boxplots. But then I was struggling to get things to work. 
-
- 
 # This is done for 100 genes, 50 random and 50 randomly selected among genes high lambda (top 5%).
 # Requires flashpca (https://github.com/gabraham/flashpca)
 
